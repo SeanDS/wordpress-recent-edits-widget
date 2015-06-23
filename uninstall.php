@@ -17,8 +17,8 @@ if ( !current_user_can( 'install_plugins' ) )
 
 if ( !is_multisite() ) 
 {
-    delete_option( 'widget_recently_updated_posts' );
-	delete_transient('widget_recently_updated_posts');
+    delete_option( 'widget_recently_edited_posts' );
+	delete_transient('widget_recently_edited_posts');
 } 
 else 
 {
@@ -29,10 +29,9 @@ else
     foreach ( $blog_ids as $blog_id ) 
     {
         switch_to_blog( $blog_id );
-        delete_option( 'widget_recently_updated_posts' );
-		delete_transient('widget_recently_updated_posts'); 
-		// On optimise la base de données après les suppressions
-		$wpdb->query('OPTIMIZE TABLE ' . $wpdb->options);
+        delete_option( 'widget_recently_edited_posts' );
+        delete_transient('widget_recently_edited_posts');
+	$wpdb->query('OPTIMIZE TABLE ' . $wpdb->options);
     }
     switch_to_blog( $original_blog_id );
 }
