@@ -146,8 +146,6 @@ function get_recently_edited_posts($nb_display, $instance) {
 			
 		$display .= "<li><a href=" . get_permalink($post->id) . ">" . $post->post_title . "</a><span style='white-space: nowrap;'> $date</span></li>";
 	}
-	
-	$display .= "<li>Hi!</li>";
 		
 	$display .= '</ul>';
 	
