@@ -142,9 +142,9 @@ function get_recently_edited_posts($nb_display, $instance) {
 	$display= '<ul>';
 
 	foreach ($last_update as $post) {
-		$date = date_i18n(get_option('date_format'), strtotime($post->post_modified));
+		$date = sprintf('%s %s', date_i18n(get_option('date_format'), strtotime($post->post_modified)), date_i18n(get_option('time_format'), strtotime($post->post_modified)));
 			
-		$display .= "<li><a href=" . get_permalink($post->id) . ">" . $post->post_title . "</a><span style='white-space: nowrap;'> $date</span></li>";
+		$display .= "<li><span style='white-space: nowrap;'> $date</span>: <a href=" . get_permalink($post->id) . ">" . $post->post_title . "</a></li>";
 	}
 		
 	$display .= '</ul>';
