@@ -5,7 +5,7 @@
 * Author: Sean Leavey
 * Version: 0.9
 * Author URI: http://attackllama.com/
-* Plugin URI: http://github.com/SeanDS/
+* Plugin URI: http://github.com/SeanDS/wordpress-recent-edits-widget/
 * License: GPL2
 */
 
